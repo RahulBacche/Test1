@@ -4,6 +4,8 @@ on:
   push:
     branches:
     - WIP_Branch
+    
+  workflow_dispatch:
 
 jobs:
   pull-request:
