@@ -1,0 +1,17 @@
+# File: .github/workflows/pull-request.yml
+
+on:
+  push:
+    branches:
+    - WIP_Branch
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "Dev_test"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
