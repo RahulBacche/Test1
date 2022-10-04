@@ -18,8 +18,8 @@ jobs:
     - name: Merge master back to dev
       run: |
           git fetch --unshallow
-          git checkout Dev
+          git checkout Dev_test
           git pull
-          git merge --no-ff UAT -m "Auto-merge UAT back to dev"
+          git merge --no-ff UAT_test -m "Auto-merge UAT_test back to dev_test"
           git push
 

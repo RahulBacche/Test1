@@ -1,8 +1,8 @@
 name: Sync
 on:
-  push:
-    branches:
-      - Dev_test
+#  push:
+#    branches:
+#      - Dev_test
       
   workflow_dispatch:
 jobs:
