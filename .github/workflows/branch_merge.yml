@@ -16,5 +16,8 @@ jobs:
           source_ref: 'Dev_test'
           target_branch: 'UAT_test'
           commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
+      - name : 1 commit ahead error
+        run : |
+            git push origin master
  
   
