@@ -18,15 +18,9 @@ jobs:
           commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
       - name: Fixing 1 commit behind error
         run: |
-            #git remote add upstream https://github/upstream/repo.git
-            #git pull --rebase upstream UAT_test
-            #git rebase --skip  (if the conflicts are not true, skip the patches)
-            #git push --force-with-lease origin UAT_test
-            git checkout UAT_test
-            git pull upstream UAT_test
-            git push origin UAT_test
-            git checkout Dev_test
-            git rebase UAT_test
-            git push --force-with-lease origin Dev_test #if you have already pushed
-      
+            git remote add upstream https://github/upstream/repo.git
+            git pull --rebase upstream UAT_test
+            git rebase --skip  (if the conflicts are not true, skip the patches)
+            git push --force-with-lease origin UAT_test
+ 
   
