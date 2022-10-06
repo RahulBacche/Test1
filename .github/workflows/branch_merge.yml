@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  merge-branch:
+  Feature_to_Dev:
     runs-on: ubuntu-latest
     environment: DEV
     steps:
@@ -14,8 +14,20 @@ jobs:
       - uses: everlytic/branch-merge@1.1.2
         with:
           github_token: ${{ github.token }}
+          source_ref: 'Feature1'
+          target_branch: 'Dev_test'
+          #commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
+
+  Dev_to_UAT:
+    runs-on: ubuntu-latest
+    needs: Feature_to_Dev
+    environment: UAT
+    steps:
+      - uses: actions/checkout@v2
+      - uses: everlytic/branch-merge@1.1.2
+        with:
+          github_token: ${{ github.token }}
           source_ref: 'Dev_test'
           target_branch: 'UAT_test'
-          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
- 
+          #commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
   
