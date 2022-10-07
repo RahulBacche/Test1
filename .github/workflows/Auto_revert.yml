@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: Reverts to earlier commit
         run : |
-            git revert cc1626a79079e444795df03be1f984c3457c9167
+            git revert cc1626a
