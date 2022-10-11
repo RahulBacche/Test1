@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Reverts to earlier commit
         run : |
-            cd "${GITHUB_WORKSPACE}"
+            cd https://github.com/RahulBacche/Test1
             git branch ${GITHUB_REF}
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
