@@ -1,4 +1,4 @@
-name: Manual Undo Push Action
+name: revert commit
 on: 
   workflow_dispatch:
     inputs:
@@ -17,6 +17,6 @@ jobs:
            ref: ${{ github.event.inputs.branch }}
            fetch-depth: 0 
       - name: Undo Push
-        uses: exions/undo-push@v1
+        uses: RahulBacche/revert_commit@v1
         with:
           branch: ${{ github.event.inputs.branch }}
