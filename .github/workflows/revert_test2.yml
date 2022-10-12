@@ -15,5 +15,5 @@ jobs:
             git clone https://github.com/RahulBacche/Test1
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git revert head
+            git revert Head -m "Bad revert"
             git push
