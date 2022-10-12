@@ -13,8 +13,7 @@ jobs:
       - name: revert using git
         run : |
             git clone https://github.com/RahulBacche/Test1
-            git branch UAT_test
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git revert HEAD --no-edit
-            git push --force
+            git revert head
+            git push
