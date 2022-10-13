@@ -1,4 +1,4 @@
-name : Revert Action
+name : Revert by Gitbash 
 
 on :
    workflow_dispatch:
