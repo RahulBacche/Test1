@@ -22,12 +22,9 @@ jobs:
             
       - name : Checkout UAT branch
         run: |
-            git checkout UAT_test
-            #git show HEAD
-           
+            git checkout UAT_test           
             
       - name : Revert Head
         run: |            
             git revert HEAD -m1
-            #git commit --amend -m "Bad commit"
             git push
