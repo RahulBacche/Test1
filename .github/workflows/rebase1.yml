@@ -11,6 +11,6 @@ jobs:
         uses: DeeDeeG/rebase-github-action@main
         with:
           # Head branch, which will be rebased onto the base_ref.
-          head_branch: Feature1
+          head_branch: Dev_test
           # Branch, or Git ref, that the head_branch will be rebased onto.
-          base_ref: Dev_test
+          base_ref: Feature1
