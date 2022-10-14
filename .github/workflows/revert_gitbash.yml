@@ -18,16 +18,13 @@ jobs:
       - name : update git pull
         run: |
             git pull
-            git log -5
+            git log -2
             
       - name : Checkout UAT branch
         run: |
-            git checkout UAT_test
-            #git show HEAD
-           
+            git checkout UAT_test           
             
       - name : Revert Head
         run: |            
             git revert HEAD -m1
-            #git commit --amend -m "Bad commit"
             git push
