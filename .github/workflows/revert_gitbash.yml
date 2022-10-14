@@ -18,7 +18,8 @@ jobs:
       - name : revert
         run: |
             git log -5
+            git show HEAD
             #git checkout UAT_test
-            git revert HEAD-1
+            git revert HEAD
             #git commit --amend -m "Bad commit"
             #git push
