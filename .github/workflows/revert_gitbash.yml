@@ -17,6 +17,7 @@ jobs:
       
       - name : revert
         run: |
+            git pull
             git log -5
             git show HEAD
             #git checkout UAT_test
