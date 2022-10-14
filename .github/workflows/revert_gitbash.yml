@@ -28,6 +28,6 @@ jobs:
             
       - name : Revert Head
         run: |            
-            git revert HEAD
+            git revert HEAD -m1
             #git commit --amend -m "Bad commit"
             #git push
