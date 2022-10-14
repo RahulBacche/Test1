@@ -15,12 +15,18 @@ jobs:
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
       
-      - name : revert
+      - name : update git pull
         run: |
             git pull
             git log -5
+            
+      - name : Check Head
+        run: |
             git show HEAD
             #git checkout UAT_test
+            
+      - name : Revert Head
+        run: |            
             git revert HEAD
             #git commit --amend -m "Bad commit"
             #git push
