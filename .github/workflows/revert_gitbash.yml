@@ -26,5 +26,5 @@ jobs:
             
       - name : Revert Head
         run: |            
-            git revert HEAD
+            git revert HEAD -m1
             git push
