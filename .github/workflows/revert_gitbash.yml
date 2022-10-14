@@ -20,7 +20,7 @@ jobs:
             git pull
             git log -5
             
-      - name : Check Head
+      - name : Checkout UAT branch
         run: |
             git checkout UAT_test
             #git show HEAD
@@ -30,4 +30,4 @@ jobs:
         run: |            
             git revert HEAD -m1
             #git commit --amend -m "Bad commit"
-            #git push
+            git push
