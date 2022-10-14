@@ -8,9 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: ReSync Branch
+      - name: ReSync Branch_1
         uses: Joao208/resync-branch@1.5.0
         with:
           PERSONAL_TOKEN: ${{secrets.PERSONAL_TOKEN}}
-          BRANCH_NAME: Feature1
-          DEFAULT_BRANCH: Dev_test
+          BRANCH_NAME: UAT_test
+          DEFAULT_BRANCH: main
+
+      - name: ReSync Branch_2
+        uses: Joao208/resync-branch@1.5.0
+        with:
+          PERSONAL_TOKEN: ${{secrets.PERSONAL_TOKEN}}
+          BRANCH_NAME: Dev_test2
+          DEFAULT_BRANCH: main
+          
