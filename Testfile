@@ -1,0 +1,23 @@
+print("Hi")
+4/10/2022
+6/10/2022
+git Push origin master added in YML file
+Updated master to branch name
+added git push UAT_test
+Environment added
+Protection added to environment
+Updated
+chnged env to DEV
+Testing change in feature branch
+Testing feature branch
+Checking commits without actions
+Testing for auto revert actions
+Testing UNDO push action 11/10/2022
+Test commit 1
+Test commit 2
+Test Commit 3 ( for revert on Dev_test)
+Test Commit 4 ( for revert by comment action)
+Testing Manual commit by new test action
+new action 12-10-22 19.21
+Testing Branch sync 14/10/2022 16.52
+testign workflow 14/10/22
