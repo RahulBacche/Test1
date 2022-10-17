@@ -27,4 +27,4 @@ jobs:
       - name : Revert Head
         run: |            
             git revert HEAD
-            git push
+            git push --force
