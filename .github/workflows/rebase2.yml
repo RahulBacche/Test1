@@ -13,6 +13,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    environment: UAT
     steps:
       - uses: actions/checkout@v2
       - name: ReSync Branch_1
