@@ -16,7 +16,7 @@ jobs:
       - name : Checkout
         uses: actions/checkout@v2
         with: 
-          ref: workflows #${{ github.event.inputs.branch }}
+          ref: Workflows #${{ github.event.inputs.branch }}
           fetch-depth: 0
 
       - name: setup git config
