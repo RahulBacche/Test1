@@ -1,7 +1,11 @@
 name : Revert by Gitbash 
 
-on :
-   workflow_dispatch:
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to revert'
+        required: true
 
 jobs:
   revert-commit-2:
@@ -9,6 +13,9 @@ jobs:
     steps:
       - name : Checkout
         uses: actions/checkout@v2
+        with: 
+          ref: Workflows #${{ github.event.inputs.branch }}
+          fetch-depth: 0
 
       - name: setup git config
         run: |
@@ -20,11 +27,11 @@ jobs:
             git pull
             git log -2
             
-      - name : Checkout UAT branch
+      - name : Checkout branch
         run: |
-            git checkout Workflows           
+            git checkout ${{ github.event.inputs.branch }}           
             
       - name : Revert Head
         run: |            
-            git revert HEAD
-            git push --force
+            git revert HEAD -m1
+            #git push
