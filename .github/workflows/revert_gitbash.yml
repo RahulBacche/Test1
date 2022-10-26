@@ -16,6 +16,7 @@ jobs:
         with: 
           ref: Dev_test2
           token : ${{ github.token }}
+          fetch-depth: 0
 
       - name: setup git config
         run: |
