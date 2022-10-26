@@ -16,12 +16,15 @@ jobs:
     environment: UAT
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{secrets.PAT_RB}}
       - name: ReSync Branch_1
         uses: Joao208/resync-branch@1.5.0
         with:
           PERSONAL_TOKEN: ${{secrets.PAT_RB}}
           BRANCH_NAME: ${{ github.event.inputs.target_branch }}
           DEFAULT_BRANCH: ${{ github.event.inputs.default_branch }}
+
 
 #      - name: ReSync Branch_2
 #        uses: Joao208/resync-branch@1.5.0
@@ -30,3 +33,4 @@ jobs:
 #          BRANCH_NAME: Dev_test2
 #          DEFAULT_BRANCH: main
           
+
