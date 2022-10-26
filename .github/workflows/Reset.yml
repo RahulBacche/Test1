@@ -1,4 +1,4 @@
-name: Manual Undo Push Action 2
+name: Manual Undo Push Action
 on: 
   workflow_dispatch:
     inputs:
