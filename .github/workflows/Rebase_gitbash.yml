@@ -38,5 +38,5 @@ jobs:
       - name : Revert Head
         run: |            
             git rebase ${{github.event.inputs.source_branch}}
-            git push
+            git push --force
             echo "Hello"
