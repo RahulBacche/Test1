@@ -34,6 +34,6 @@ jobs:
       - name : Revert Head
         run: |            
             git revert HEAD -m1
-            #git push
+            git push
             echo "workflows"
 
