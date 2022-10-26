@@ -4,6 +4,13 @@ name: Branch_Merge
 
 on:
   workflow_dispatch:
+    inputs:
+      source_branch:
+        description: 'Source Branch to merge'
+        required: true
+      target_branch:
+        description: 'Target Branch to merge'
+        required: true
 
 jobs:
 
@@ -16,7 +23,6 @@ jobs:
       - uses: everlytic/branch-merge@1.1.2
         with:
           github_token: ${{ github.token }}
-          source_ref: 'Dev_test'
-          target_branch: 'UAT_test'
+          source_ref: ${{ github.event.inputs.source_branch }}
+          target_branch: ${{ github.event.inputs.target_branch }}
           #commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
-  
