@@ -35,5 +35,5 @@ jobs:
         run: |            
             git revert HEAD -m1
             git push
-            echo "workflows"
+            echo "running from main"
 
