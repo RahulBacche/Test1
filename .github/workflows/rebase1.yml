@@ -1,7 +1,14 @@
 name: Rebase_1
 on:
-  workflow_dispatch:    
-
+  workflow_dispatch:
+    inputs:
+      default_branch:
+        description: 'Source Branch of Rebase'
+        required: true
+      target_branch:
+        description: 'Target Branch to Rebase'
+        required: true
+        
 jobs:
   rebase_branches:
     runs-on: ubuntu-latest
@@ -11,6 +18,6 @@ jobs:
         uses: DeeDeeG/rebase-github-action@main
         with:
           # Head branch, which will be rebased onto the base_ref.
-          head_branch: Dev_test
+          head_branch: ${{ github.event.inputs.target_branch }}
           # Branch, or Git ref, that the head_branch will be rebased onto.
-          base_ref: Feature1
+          base_ref: ${{ github.event.inputs.default_branch }}
