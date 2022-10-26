@@ -30,6 +30,7 @@ jobs:
       - name : Checkout branch
         run: |
             git checkout ${{ github.event.inputs.branch }}           
+            git pull
             
       - name : Revert Head
         run: |            
