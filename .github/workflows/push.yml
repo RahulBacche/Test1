@@ -15,9 +15,9 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: 'rebase.yml'
+        source_file: '.github/workflows'
         destination_repo: 'RahulBacche/test3'
-        destination_folder: '.github/workflows'
+        #destination_folder: 
         user_email: 'rahulbacche3@gmail.com'
         user_name: 'RahulBacche'
         commit_message: 'A custom message for the commit'
