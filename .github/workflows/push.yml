@@ -1,0 +1,23 @@
+name: Push File
+
+on:
+  workflow_dispatch:
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'rebase.yml'
+        destination_repo: 'RahulBacche/test3'
+        destination_folder: '.github/workflows'
+        user_email: 'rahulbacche3@gmail.com'
+        user_name: 'RahulBacche'
+        commit_message: 'A custom message for the commit'
