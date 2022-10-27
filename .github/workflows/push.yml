@@ -1,8 +1,7 @@
 name: Push File
 
 on:
-    workflow_dispatch:
-      
+  workflow_dispatch:
 
 jobs:
   copy-file:
@@ -11,14 +10,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Pushes test folder
-      uses: datalbry/copy_folder_to_another_repo_action@1.0.0
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.PAT_RB }}
       with:
-        source_folder: '.github'
+        source_file: '.github'
         destination_repo: 'RahulBacche/test3'
         #destination_folder: 
         user_email: 'rahulbacche3@gmail.com'
         user_name: 'RahulBacche'
-        commit_msg: 'Uploading github actions'
+        commit_message: 'A custom message for the commit'
