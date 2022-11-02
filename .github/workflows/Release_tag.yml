@@ -1,11 +1,9 @@
 name: Create Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      Version:
-        description: 'Example: v1.2.3'
-        required: true
+  push:
+    tags:
+      - '*'
 
 jobs:
   create-release:
@@ -27,6 +25,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.event.inputs.Version }}
+          tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: ${{ steps.changelog.outputs.changes }}
