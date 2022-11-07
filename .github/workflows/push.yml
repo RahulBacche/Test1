@@ -2,6 +2,10 @@ name: Push File
 
 on:
   workflow_dispatch:
+    inputs:
+      destination_repo:
+        description: 'Destination Repo address'
+        required: true
 
 jobs:
   copy-file:
@@ -16,7 +20,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.PAT_RB }}
       with:
         source_file: '.github'
-        destination_repo: 'RahulBacche/Actionn'
+        destination_repo: ${{ github.event.inputs.destination_repo }}
         #destination_folder: 
         user_email: 'rahulbacche3@gmail.com'
         user_name: 'RahulBacche'
