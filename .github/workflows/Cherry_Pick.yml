@@ -20,7 +20,6 @@ jobs:
       - name : Checkout
         uses: actions/checkout@v2
         with: 
-          ref: Dev_test2
 #          token : ${{ github.token }}
           fetch-depth: 0
 
