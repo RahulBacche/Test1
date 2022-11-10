@@ -1,15 +1,17 @@
 name : Cherry Pick commit 
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       branch:
         description: 'Target branch'
         required: true
+        type: string
         
       Commit_id:
         description: 'SHA of Commit (Commit ID)'
         required: true
+        type: string
 
 jobs:
   Cherry_pick_commit:
