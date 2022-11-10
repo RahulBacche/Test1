@@ -24,7 +24,7 @@ jobs:
       - name : Checkout
         uses: actions/checkout@v2
         with: 
-          token : ${{secrets.token}}
+          token : ${{secrets.PAT_GITHUB}}
           fetch-depth: 0
 
       - name: setup git config
