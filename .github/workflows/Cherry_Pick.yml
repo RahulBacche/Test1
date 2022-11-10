@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v2
         with: 
           ref: Dev_test2
-          token : ${{secrets.PAT_GITHUB}}
+          token : ${{ github.token }}
           fetch-depth: 0
 
       - name: setup git config
