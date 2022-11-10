@@ -12,6 +12,10 @@ on:
         description: 'SHA of Commit (Commit ID)'
         required: true
         type: string
+        
+    secrets:
+      token:
+        required: true
 
 jobs:
   Cherry_pick_commit:
@@ -20,7 +24,7 @@ jobs:
       - name : Checkout
         uses: actions/checkout@v2
         with: 
-          token : ${{secrets.PAT_GITHUB}}
+          token : ${{secrets.token}}
           fetch-depth: 0
 
       - name: setup git config
