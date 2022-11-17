@@ -1,0 +1,20 @@
+name: Sync_Databricks_PROD
+
+on:
+  workflow_call:
+    secrets:
+      PROD_REPO_ID:
+        required: true
+      PROD_PAT:
+        required: true
+        
+
+
+jobs:
+  Synchronizing:
+    if: github.event.pull_request.merged == true || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          curl -s -n -X PATCH  "https://nbcu-cds.cloud.databricks.com/api/2.0/repos/${{ secrets.PROD_REPO_ID }}" -H "Authorization: Bearer ${{ secrets.PROD_PAT }}" -d '{"branch": "main"}'
