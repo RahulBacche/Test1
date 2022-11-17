@@ -1,0 +1,20 @@
+name: Sync_Databricks_UAT
+
+on:
+  workflow_call:
+    secrets:
+      UAT_REPO_ID:
+        required: true
+      UAT_PAT:
+        required: true
+        
+
+
+jobs:
+  Synchronizing:
+    if: github.event.pull_request.merged == true || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          curl -s -n -X PATCH  "https://nbcu-cds-uat.cloud.databricks.com/api/2.0/repos/${{ secrets.UAT_REPO_ID }}" -H "Authorization: Bearer ${{ secrets.UAT_PAT }}" -d '{"branch": "uat"}'
